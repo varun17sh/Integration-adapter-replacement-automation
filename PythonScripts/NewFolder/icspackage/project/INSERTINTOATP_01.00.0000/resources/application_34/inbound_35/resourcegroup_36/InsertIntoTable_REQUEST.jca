@@ -1,0 +1,29 @@
+<adapter-config adapter="atpdatabase" name="InsertIntoTable_REQUEST_ptt" wsdlLocation="InsertIntoTable_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata" xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/atpdatabase/InsertIntoTable_REQUEST/types">
+  
+  
+<connection-factory location="eis/DB/ATPSHAREDINFRA">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.tip.adapter.db.DBManagedConnectionFactory">
+      <property name="IsSSLEnabled" value="true"/>
+      <property name="MaxConnections" value="35"/>
+      <property name="RuntimeJKSUnzipLoc" value="ATPSHAREDINFRA"/>
+      <property name="UsesBatchWriting" value="true"/>
+      <property name="ConnectionString" value="2B731F769540C4FE1208361ADF9496D40EA793A78FF9C66917C6FD194B701F2C7B3466EAF9A2F9D4D5360A3CC554B9A69D051A6B0F46DB19BE9F004C7D132420A22673AC7CC6746DC9B30791A2DFD38B7CCEE4FFE7CFE72854E493BA7F95A128056C0FD9AD6776EA78334AC6948CD6F263996D82BF83C465B9383AA6E1224FE112A60A028D5C043F25A77CB7E91E45FB431338A4C394D0283D6A96059297ACB58ADC37C34D922E5DDBA8AE31A33321811CC194BB1DDB6720572FBE3DE13E12EF8FA38A843A97CCFAE894A01A252E98C0286F73A2D52C9A7EB39DAC96AC7AAB789D4F52CD55BCEAE65AE2FB1A81E08FD5FE7278D7E81E4F44581D8E7CB57C45EE82B9803E8F05E83C75BC64FE86984474CB3CDAE7FAC3708036CC954347BF8000701FB161FA7CE8748DD45CDB68E6747CB8E4789E1B079852F72F9792B780A402940E8E0FBFE9ABF6C8F1DDD1976ED2C8C81F27D46EBC6ACCBB0E483FC15B157E7675096B89CD76600CFB6AFF2330322B"/>
+      <property name="MaxReadConnections" value="15"/>
+      <property name="ConnectionUniqueKey" value="A8E7BBEEC229C51F160556F816FEDB79D34B5E274263015A90A85C6BA313760C"/>
+      <property name="PlatformClassName" value="org.eclipse.persistence.platform.database.Oracle10Platform"/>
+      <property name="csfkey" value="08905058068d76d30114d0407b35d1f2e61db778b70bfea065e648594980c16f"/>
+      <property name="DriverClassName" value="oracle.jdbc.OracleDriver"/>
+      <property name="MinConnections" value="2"/>
+      <property name="MinReadConnections" value="1"/>
+      <property name="csfMap" value="oracle.cloud.adapter"/>
+    </non-managed-connection>
+  </connection-factory><endpoint-interaction operation="insert" portType="InsertIntoTable_REQUEST_ptt">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DetectOmissions" value="true"/>
+      <property name="DescriptorName" value="InsertIntoTable.Person"/>
+      <property name="MappingsMetaDataURL" value="InsertIntoTable_REQUEST-or-mappings.xml"/>
+      <property name="OutputCompletedXml" value="false"/>
+      <property name="DmlType" value="insert"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction></adapter-config>

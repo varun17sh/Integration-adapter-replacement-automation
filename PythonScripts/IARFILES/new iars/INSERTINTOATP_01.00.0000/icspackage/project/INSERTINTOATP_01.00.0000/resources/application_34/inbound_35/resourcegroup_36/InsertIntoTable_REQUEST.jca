@@ -1,0 +1,27 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/database/InsertIntoTable_REQUEST/types" name="InsertIntoTable_REQUEST_ptt" adapter="database" wsdlLocation="InsertIntoTable_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="eis/DB/TESTATPFROMDB">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.tip.adapter.db.DBManagedConnectionFactory">
+      <property name="MaxConnections" value="35"/>
+      <property name="UsesBatchWriting" value="true"/>
+      <property name="ConnectionString" value="2B731F769540C4FE1208361ADF9496D49990E91E84AD3BE48B8245A65BC944A7C2F729B9596D8D063D2D8941B3F4308C55BFD09B498C7D058D040693D71129EB7DF4699F3CD9A5B3154D252D8CEA16590D053F5A4A0C26BE754834AFDF5EAB2755AB912FDA1DD042262408E2F7A143DC"/>
+      <property name="MaxReadConnections" value="15"/>
+      <property name="ConnectionUniqueKey" value="CDA713B991FD25D0CE32A99C93D673ABF7371620B06D514290F4AEBE2A1EF5C0"/>
+      <property name="PlatformClassName" value="org.eclipse.persistence.platform.database.Oracle10Platform"/>
+      <property name="csfkey" value="a1ff6fa82ec09a26bf4cd14c2ec5d02ed067e6cab4bedb0568b53e5831bcb8b8"/>
+      <property name="DriverClassName" value="oracle.jdbc.OracleDriver"/>
+      <property name="MinConnections" value="2"/>
+      <property name="MinReadConnections" value="1"/>
+      <property name="csfMap" value="oracle.cloud.adapter"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="InsertIntoTable_REQUEST_ptt" operation="insert" onpremise="true" agent="PMINSTAGENT">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DetectOmissions" value="true"/>
+      <property name="DescriptorName" value="InsertIntoTable.Person"/>
+      <property name="MappingsMetaDataURL" value="InsertIntoTable_REQUEST-or-mappings.xml"/>
+      <property name="OutputCompletedXml" value="false"/>
+      <property name="DmlType" value="insert"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

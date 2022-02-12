@@ -1,0 +1,38 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/REST/InsertIntoPersonTable_REQUEST/types" name="InsertIntoPersonTable_REQUESTPortType" adapter="rest" wsdlLocation="InsertIntoPersonTable_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.rest.RestAdapterConnectionFactory">
+      <property name="securityPolicy" value="BASIC_AUTH"/>
+      <property name="cloud.adapter.sdk.version" value="20.2.3"/>
+      <property name="cloud.adapter.plugin.version" value="20.2.3"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-activation portType="InsertIntoPersonTable_REQUESTPortType" operation="execute">
+    <activation-spec className="oracle.tip.adapter.cloud.CloudActivationSpec">
+      <property name="targetOperation" value="execute"/>
+      <property name="allowChangeDefaultNamespace" value="false"/>
+      <property name="responseJsonTopLevelArray" value="false"/>
+      <property name="HTTPHeadersAdded" value="true"/>
+      <property name="ResponseMediaType" value="application/json"/>
+      <property name="ResponseSample" value="{   &quot;id&quot; : 123,    &quot;fname&quot; : &quot;first name&quot;,   &quot;lname&quot; : &quot;last name&quot; }"/>
+      <property name="HttpVerb" value="POST"/>
+      <property name="ResponseElementName" value="response-wrapper"/>
+      <property name="RequestMediaType" value="application/json"/>
+      <property name="integrationWSDLNamespace" value="http://xmlns.oracle.com/cloud/adapter/REST/InsertIntoPersonTable_REQUEST"/>
+      <property name="isRequestRawBytes" value="false"/>
+      <property name="copyFaultFromModel" value="true"/>
+      <property name="requestJsonTopLevelArray" value="false"/>
+      <property name="RequestElementName" value="request-wrapper"/>
+      <property name="generatePartnerLink" value="false"/>
+      <property name="RequestSample" value="{   &quot;id&quot; : 123,    &quot;fname&quot; : &quot;first name&quot;,   &quot;lname&quot; : &quot;last name&quot; }"/>
+      <property name="isResponseRawBytes" value="false"/>
+      <property name="ResponseElementNS" value="http://xmlns.oracle.com/cloud/adapter/REST/InsertIntoPersonTable/types"/>
+      <property name="invocationStyle" value="REQUEST_RESPONSE"/>
+      <property name="operations" value="default"/>
+      <property name="RequestElementNS" value="http://xmlns.oracle.com/cloud/adapter/REST/InsertIntoPersonTable/types"/>
+      <property name="postQueryParamsAsContent" value="false"/>
+      <property name="targetOperation" value="execute"/>
+      <property name="integrationSchemaNamespace" value="http://xmlns.oracle.com/cloud/adapter/REST/InsertIntoPersonTable_REQUEST/types"/>
+      <property name="ResourceURI" value="/insert"/>
+    </activation-spec>
+  </endpoint-activation>
+</adapter-config>
